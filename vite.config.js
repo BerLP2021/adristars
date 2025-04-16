@@ -27,7 +27,8 @@ export default defineConfig({
             ],
         },
     },
-    base: './',
+    // base: './',
+    base: '/adristars/',
     build: {
         minify: 'terser',
     },
