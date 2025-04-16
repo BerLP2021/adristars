@@ -1,0 +1,126 @@
+.footer {
+    background: var(--black);
+
+    .footer_wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-content: space-between;
+
+        grid-template-areas:
+            'logo subscribe'
+            'slogan subscribe'
+            'hr hr'
+            'copyright nav';
+        padding-block: 64px 48px;
+        padding-inline: 24px;
+        .footer_logo {
+            grid-area: logo;
+            svg {
+                width: 126px;
+                height: 15px;
+            }
+        }
+        .footer_slogan {
+            grid-area: slogan;
+            margin-top: 24px;
+            font-size: var(--inputs);
+            line-height: 1.5;
+            color: var(--white-50);
+        }
+        .footer_subscribe-form {
+            grid-area: subscribe;
+            display: flex;
+            align-items: end;
+            gap: 16px;
+
+            .footer_form-label {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                span {
+                    font-size: var(--capture);
+                }
+                input {
+                    border-radius: 8px;
+                    padding: 12px 14px;
+                    font-size: var(--inputs);
+                    border: 1px solid var(--white-20);
+                    background: transparent;
+                    width: 17pc;
+                    @media (max-width: 1024px) {
+                        width: 10pc;
+                    }
+                    &::placeholder {
+                        color: var(--white-50);
+                    }
+                }
+            }
+            .footer_form-btn {
+                padding: 12px 24px;
+                font-size: var(--body-s);
+            }
+        }
+        .footer_hr {
+            grid-area: hr;
+            width: 100%;
+            margin-block: 64px 32px;
+            color: var(--white-20);
+        }
+        .footer_copyright {
+            grid-area: copyright;
+            font-size: var(--inputs);
+            line-height: 1.5;
+            color: var(--white-50);
+        }
+        .footer_nav ul {
+            grid-area: nav;
+            display: flex;
+            justify-self: flex-end;
+            gap: 16px;
+            font-size: var(--inputs);
+            line-height: 1.5;
+            .footer_nav-item {
+                transition: all 0.1s ease-in-out;
+                color: var(--white-50);
+                @media (hover: hover) {
+                    &:hover {
+                        color: rgb(var(--primary));
+                    }
+                }
+                &:active {
+                    color: rgb(var(--primary));
+                }
+            }
+        }
+    }
+}
+@media (width < 768px) {
+    .footer {
+        .footer_wrapper {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                'logo'
+                'slogan'
+                'subscribe'
+                'hr'
+                'copyright'
+                'nav';
+            .footer_subscribe-form {
+                margin-top: 32px;
+                .footer_form-label {
+                    width: 100%;
+                    input {
+                        width: auto;
+                    }
+                }
+            }
+            .footer_hr {
+                margin-top: 56px;
+            }
+            .footer_nav ul {
+                justify-self: start;
+                margin-top: 24px;
+            }
+        }
+    }
+}

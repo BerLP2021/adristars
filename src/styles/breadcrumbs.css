@@ -1,0 +1,40 @@
+.breadcrumbs {
+    margin-top: 64px;
+    margin-left: 24px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    .breadcrumbs_item {
+        transition: all 0.1s ease-in-out;
+        @media (hover: hover) {
+            &:hover {
+                color: rgba(var(--primary) / 80%);
+            }
+        }
+        &:active {
+            color: rgb(var(--primary));
+        }
+    }
+    .breadcrumbs_item__text {
+        color: var(--white-50);
+        font-size: var(--inputs);
+        line-height: 1.5;
+    }
+    .breadcrumbs_item__active {
+        color: var(--white-90);
+    }
+    .breadcrumbs_item__separator {
+        display: inline-block;
+        color: var(--white-20);
+        & svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+
+@media (width < 1464px) {
+    nav:has(.breadcrumbs) {
+        display: none;
+    }
+}

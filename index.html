@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Car Rental - Volkswagen Touareg Booking | Untitled UI</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <header class="header">
+            <div class="header_wrapper container">
+                <a class="header_logo" href="#" aria-label="Untitled UI Home">
+                    <svg><use href="src/assets/icons/sprite.svg#logo" /></svg>
+                </a>
+                <nav class="header_nav desktop" aria-label="Main navigation">
+                    <ul>
+                        <li class="header_nav-item">
+                            <a class="header_nav-link" href="#">Book</a>
+                        </li>
+                        <li class="header_nav-item">
+                            <a class="header_nav-link" href="#">Help</a>
+                        </li>
+                        <li class="header_nav-item">
+                            <a class="header_nav-link" href="#">FAQ</a>
+                        </li>
+                        <li class="header_nav-item">
+                            <a class="header_nav-link" href="#">Rental Policies</a>
+                        </li>
+                        <li class="header_nav-item">
+                            <a class="header_nav-link" href="#">Blog & Guides</a>
+                        </li>
+                    </ul>
+                </nav>
+                <ul class="header_links">
+                    <li class="header_links-item desktop">
+                        <label for="lang-select" class="sr-only">Select language</label>
+                        <select id="lang-select" class="header_lang-select" name="lang-select">
+                            <option value="EN" selected>EN</option>
+                            <option value="DE">DE</option>
+                            <option value="UA">UA</option>
+                        </select>
+                    </li>
+                    <li class="header_links-item desktop-tablet">
+                        <a class="header_links-link" href="tel:+1234567890">
+                            <svg aria-label="Phone icon">
+                                <use href="src/assets/icons/sprite.svg#tel" />
+                            </svg>
+                            +123 456 7890
+                        </a>
+                    </li>
+                    <li class="header_links-item desktop">
+                        <a class="header_links-link" href="#">
+                            <svg aria-label="Sign out icon">
+                                <use href="src/assets/icons/sprite.svg#signout" />
+                            </svg>
+                            Sign In
+                        </a>
+                    </li>
+                </ul>
+                <div class="header_menu mobile-tablet">
+                    <button
+                        class="header_menu-button"
+                        popovertarget="my-popover"
+                        aria-label="Toggle navigation menu"
+                    >
+                        <span class="header_menu-line"></span>
+                        <span class="header_menu-line"></span>
+                        <span class="header_menu-line"></span>
+                    </button>
+                    <div id="my-popover" popover role="menu" aria-label="Mobile navigation menu">
+                        <a
+                            href="#"
+                            class="header_menu-link"
+                            role="menuitem"
+                            onclick="document.getElementById('my-popover').hidePopover()"
+                            >Main</a
+                        >
+                        <a
+                            href="#"
+                            class="header_menu-link"
+                            role="menuitem"
+                            onclick="document.getElementById('my-popover').hidePopover()"
+                            >Book</a
+                        >
+                        <a
+                            href="#"
+                            class="header_menu-link"
+                            role="menuitem"
+                            onclick="document.getElementById('my-popover').hidePopover()"
+                            >Help</a
+                        >
+                        <a
+                            href="#"
+                            class="header_menu-link"
+                            role="menuitem"
+                            onclick="document.getElementById('my-popover').hidePopover()"
+                            >FAQ</a
+                        >
+                        <a
+                            href="#"
+                            class="header_menu-link"
+                            role="menuitem"
+                            onclick="document.getElementById('my-popover').hidePopover()"
+                            >Rental Policies</a
+                        >
+                        <a
+                            href="#"
+                            class="header_menu-link"
+                            role="menuitem"
+                            onclick="document.getElementById('my-popover').hidePopover()"
+                            >Blog & Guides</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <nav aria-label="Page breadcrumb">
+                    <ul class="breadcrumbs">
+                        <li class="breadcrumbs_item breadcrumbs_item__text">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="breadcrumbs_item__separator">
+                            <svg aria-hidden="true">
+                                <use href="src/assets/icons/sprite.svg#breadcrumb-arrow" />
+                            </svg>
+                        </li>
+                        <li class="breadcrumbs_item breadcrumbs_item__text">
+                            <a href="#">Search result</a>
+                        </li>
+                        <li class="breadcrumbs_item__separator">
+                            <svg aria-hidden="true">
+                                <use href="src/assets/icons/sprite.svg#breadcrumb-arrow" />
+                            </svg>
+                        </li>
+                        <li
+                            class="breadcrumbs_item__text breadcrumbs_item__active"
+                            aria-current="page"
+                        >
+                            Volkswagen Touareg
+                        </li>
+                    </ul>
+                </nav>
+                <form class="product" onsubmit="handleSubmit(event)">
+                    <section class="product_order-progress" aria-label="Booking progress">
+                        <div
+                            class="product_progress-bar"
+                            role="progressbar"
+                            aria-valuenow="1"
+                            aria-valuemin="1"
+                            aria-valuemax="4"
+                            aria-label="Booking steps"
+                        >
+                            <div class="order-step order-step__done">
+                                <span class="order-step_circle"
+                                    ><svg aria-hidden="true">
+                                        <use
+                                            href="src/assets/icons/sprite.svg#checkbox-arrow"
+                                        /></svg
+                                ></span>
+                            </div>
+                            <div class="order-step">
+                                <span class="order-step_circle"
+                                    ><svg aria-hidden="true">
+                                        <use
+                                            href="src/assets/icons/sprite.svg#checkbox-arrow"
+                                        /></svg
+                                ></span>
+                            </div>
+                            <div class="order-step">
+                                <span class="order-step_circle"
+                                    ><svg aria-hidden="true">
+                                        <use
+                                            href="src/assets/icons/sprite.svg#checkbox-arrow"
+                                        /></svg
+                                ></span>
+                            </div>
+                            <div class="order-step">
+                                <span class="order-step_circle"
+                                    ><svg aria-hidden="true">
+                                        <use
+                                            href="src/assets/icons/sprite.svg#checkbox-arrow"
+                                        /></svg
+                                ></span>
+                            </div>
+                        </div>
+                        <div class="product_progress-steps">
+                            <span class="order-step__text">Add on extras</span>
+                            <span class="order-step__text">Insurance</span>
+                            <span class="order-step__text">Confirm order</span>
+                            <span class="order-step__text">Payment</span>
+                        </div>
+                        <div class="product_progress-summary">
+                            <div class="progress_summary-img">
+                                <img
+                                    src="src/assets/images/touareg.webp"
+                                    alt="Volkswagen Touareg"
+                                />
+                            </div>
+                            <h2 class="progress_summary-title">Volkswagen Touareg</h2>
+                            <p class="progress_summary-car-type">or similar Intermediate</p>
+                            <p class="progress_summary-duration">1 rental day</p>
+                        </div>
+                    </section>
+                    <div class="product_info">
+                        <section class="product_description" id="product_description">
+                            <div class="description_content">
+                                <h2 class="description_title">Volkswagen Touareg</h2>
+                                <label for="car-model" class="sr-only">Car Model</label>
+                                <input
+                                    type="text"
+                                    class="sr-only"
+                                    name="carModel"
+                                    id="car-model"
+                                    tabindex="-1"
+                                    value="Volkswagen Touareg"
+                                />
+                                <p class="description_price">
+                                    32,98 <span class="description_currency">EUR/day</span>
+                                </p>
+                                <h3 class="description_terms-title">Included in Price</h3>
+                                <ul class="description_terms">
+                                    <li class="terms_item">
+                                        <svg aria-hidden="true">
+                                            <use href="src/assets/icons/sprite.svg#check" />
+                                        </svg>
+                                        Airport/City Fee
+                                    </li>
+                                    <li class="terms_item">
+                                        <svg aria-hidden="true">
+                                            <use href="src/assets/icons/sprite.svg#check" />
+                                        </svg>
+                                        Local Tax
+                                    </li>
+                                    <li class="terms_item">
+                                        <svg aria-hidden="true">
+                                            <use href="src/assets/icons/sprite.svg#check" />
+                                        </svg>
+                                        Registration Fee
+                                    </li>
+                                    <li class="terms_item">
+                                        <svg aria-hidden="true">
+                                            <use href="src/assets/icons/sprite.svg#check" />
+                                        </svg>
+                                        Unlimited Mileage
+                                    </li>
+                                </ul>
+                                <ul class="description_options">
+                                    <li class="option_item">
+                                        <svg aria-hidden="true">
+                                            <use href="src/assets/icons/sprite.svg#car" />
+                                        </svg>
+                                        5 Doors
+                                    </li>
+                                    <li class="option_item">
+                                        <svg aria-hidden="true">
+                                            <use href="src/assets/icons/sprite.svg#gear-box" />
+                                        </svg>
+                                        5 Manual
+                                    </li>
+                                    <li class="option_item">
+                                        <svg aria-hidden="true">
+                                            <use href="src/assets/icons/sprite.svg#suitcase" />
+                                        </svg>
+                                        3 Suitcase
+                                    </li>
+                                    <li class="option_item">
+                                        <svg aria-hidden="true">
+                                            <use href="src/assets/icons/sprite.svg#passengers" />
+                                        </svg>
+                                        5 Passengers
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="description_image">
+                                <img
+                                    src="src/assets/images/touareg.webp"
+                                    alt="Volkswagen Touareg"
+                                />
+                            </div>
+                        </section>
+                        <fieldset class="product_extras" id="product_extras">
+                            <legend class="sr-only">Add on extras</legend>
+                            <h2 class="extras_title">Add on extras</h2>
+                            <div class="extras_options">
+                                <label
+                                    class="option_item"
+                                    for="unlimited-mileage"
+                                    data-included="true"
+                                >
+                                    <input
+                                        type="checkbox"
+                                        class="sr-only"
+                                        name="extras-options"
+                                        value="unlimited-mileage"
+                                        id="unlimited-mileage"
+                                        checked
+                                        onchange="this.checked = true"
+                                    />
+                                    <div class="option_description">
+                                        <div class="option_icon">
+                                            <svg aria-hidden="true">
+                                                <use href="src/assets/icons/sprite.svg#child" />
+                                            </svg>
+                                        </div>
+                                        <h4 class="option_title">Unlimited Mileage</h4>
+                                        <span class="option_price">Included</span>
+                                    </div>
+                                    <span class="option_btn" aria-hidden="true">
+                                        <svg><use href="src/assets/icons/sprite.svg#plus" /></svg>
+                                    </span>
+                                </label>
+                                <label class="option_item" for="child-seat">
+                                    <input
+                                        type="checkbox"
+                                        class="sr-only"
+                                        name="extras-options"
+                                        value="child-seat"
+                                        id="child-seat"
+                                    />
+                                    <div class="option_description">
+                                        <div class="option_icon">
+                                            <svg aria-hidden="true">
+                                                <use href="src/assets/icons/sprite.svg#child" />
+                                            </svg>
+                                        </div>
+                                        <h4 class="option_title">Child Seat</h4>
+                                        <span class="option_price">15 EUR</span>
+                                    </div>
+                                    <span class="option_btn" aria-hidden="true">
+                                        <svg><use href="src/assets/icons/sprite.svg#plus" /></svg>
+                                    </span>
+                                </label>
+                                <label class="option_item" for="additional-driver">
+                                    <input
+                                        type="checkbox"
+                                        class="sr-only"
+                                        name="extras-options"
+                                        value="additional-driver"
+                                        id="additional-driver"
+                                    />
+                                    <div class="option_description">
+                                        <div class="option_icon">
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="src/assets/icons/sprite.svg#additional-driver"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <h4 class="option_title">Additional Driver</h4>
+                                        <span class="option_price">15 EUR</span>
+                                    </div>
+                                    <span class="option_btn" aria-hidden="true">
+                                        <svg><use href="src/assets/icons/sprite.svg#plus" /></svg>
+                                    </span>
+                                </label>
+                                <label class="option_item" for="cross-border">
+                                    <input
+                                        type="checkbox"
+                                        class="sr-only"
+                                        name="extras-options"
+                                        value="cross-border"
+                                        id="cross-border"
+                                    />
+                                    <div class="option_description">
+                                        <div class="option_icon">
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="src/assets/icons/sprite.svg#cross-border"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <h4 class="option_title">Cross-border Fee</h4>
+                                        <span class="option_price">15 EUR</span>
+                                    </div>
+                                    <span class="option_btn" aria-hidden="true">
+                                        <svg><use href="src/assets/icons/sprite.svg#plus" /></svg>
+                                    </span>
+                                </label>
+                                <label class="option_item" for="gps">
+                                    <input
+                                        type="checkbox"
+                                        class="sr-only"
+                                        name="extras-options"
+                                        value="gps"
+                                        id="gps"
+                                    />
+                                    <div class="option_description">
+                                        <div class="option_icon">
+                                            <svg aria-hidden="true">
+                                                <use href="src/assets/icons/sprite.svg#gps" />
+                                            </svg>
+                                        </div>
+                                        <h4 class="option_title">GPS Navigation System</h4>
+                                        <span class="option_price">15 EUR</span>
+                                    </div>
+                                    <span class="option_btn" aria-hidden="true">
+                                        <svg><use href="src/assets/icons/sprite.svg#plus" /></svg>
+                                    </span>
+                                </label>
+                                <label class="option_item" for="waiver">
+                                    <input
+                                        type="checkbox"
+                                        class="sr-only"
+                                        name="extras-options"
+                                        value="waiver"
+                                        id="waiver"
+                                    />
+                                    <div class="option_description">
+                                        <div class="option_icon">
+                                            <svg aria-hidden="true">
+                                                <use href="src/assets/icons/sprite.svg#waiver" />
+                                            </svg>
+                                        </div>
+                                        <h4 class="option_title">Roadside Waiver</h4>
+                                        <span class="option_price">15 EUR</span>
+                                    </div>
+                                    <span class="option_btn" aria-hidden="true">
+                                        <svg><use href="src/assets/icons/sprite.svg#plus" /></svg>
+                                    </span>
+                                </label>
+                                <label class="option_item" for="full-tank">
+                                    <input
+                                        type="checkbox"
+                                        class="sr-only"
+                                        name="extras-options"
+                                        value="full-tank"
+                                        id="full-tank"
+                                    />
+                                    <div class="option_description">
+                                        <div class="option_icon">
+                                            <svg aria-hidden="true">
+                                                <use href="src/assets/icons/sprite.svg#full-tank" />
+                                            </svg>
+                                        </div>
+                                        <h4 class="option_title">Full Tank Service</h4>
+                                        <span class="option_price">15 EUR</span>
+                                    </div>
+                                    <span class="option_btn" aria-hidden="true">
+                                        <svg><use href="src/assets/icons/sprite.svg#plus" /></svg>
+                                    </span>
+                                </label>
+                                <label class="option_item" for="wi-fi">
+                                    <input
+                                        type="checkbox"
+                                        class="sr-only"
+                                        name="extras-options"
+                                        value="wi-fi"
+                                        id="wi-fi"
+                                    />
+                                    <div class="option_description">
+                                        <div class="option_icon">
+                                            <svg aria-hidden="true">
+                                                <use href="src/assets/icons/sprite.svg#wi-fi" />
+                                            </svg>
+                                        </div>
+                                        <h4 class="option_title">Wi-Fi Hotspot</h4>
+                                        <span class="option_price">15 EUR</span>
+                                    </div>
+                                    <span class="option_btn" aria-hidden="true">
+                                        <svg><use href="src/assets/icons/sprite.svg#plus" /></svg>
+                                    </span>
+                                </label>
+                            </div>
+                        </fieldset>
+                        <fieldset class="product_insurance" id="product_insurance">
+                            <legend class="sr-only">Insurance</legend>
+                            <h2 class="insurance_title">Insurance</h2>
+                            <div class="insurance_plans-list">
+                                <label class="insurance_plan insurance_plan__free" for="free">
+                                    <input
+                                        type="radio"
+                                        class="sr-only"
+                                        name="insurance"
+                                        value="free"
+                                        id="free"
+                                        aria-describedby="free-description"
+                                    />
+                                    <h3 class="insurance_plan-title">No insurance</h3>
+                                    <p class="insurance_plan-price">Free</p>
+                                    <div class="insurance_plan-description" id="free-description">
+                                        Important Notice:
+                                        <ul class="insurance_option-list">
+                                            <li class="insurance_option-item">
+                                                <svg aria-hidden="true">
+                                                    <use
+                                                        href="/src/assets/icons/sprite.svg#warning"
+                                                    />
+                                                </svg>
+                                                You are fully responsible for any damage to the
+                                                vehicle.
+                                            </li>
+                                            <li class="insurance_option-item">
+                                                <svg aria-hidden="true">
+                                                    <use
+                                                        href="/src/assets/icons/sprite.svg#warning"
+                                                    />
+                                                </svg>
+                                                Full repair costs will be charged in case of an
+                                                accident or damage (no financial limit).
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <p class="insurance_plan-notice">
+                                        We strongly recommend choosing one of the insurance options
+                                        to ensure a worry-free journey.
+                                    </p>
+                                    <div class="layered-background" aria-hidden="true"></div>
+                                </label>
+                                <label class="insurance_plan insurance_plan__basic" for="basic">
+                                    <input
+                                        type="radio"
+                                        class="sr-only"
+                                        name="insurance"
+                                        checked
+                                        value="basic"
+                                        id="basic"
+                                        aria-describedby="basic-description"
+                                    />
+                                    <h3 class="insurance_plan-title">Basic Insurance</h3>
+                                    <p class="insurance_plan-price">15 EUR/day</p>
+                                    <div class="insurance_plan-description" id="basic-description">
+                                        <ul class="insurance_option-list">
+                                            <li class="insurance_option-item">
+                                                <svg aria-hidden="true">
+                                                    <use
+                                                        href="/src/assets/icons/sprite.svg#check"
+                                                    />
+                                                </svg>
+                                                Coverage for vehicle damage in case of an accident
+                                                (with excess).
+                                            </li>
+                                            <li class="insurance_option-item">
+                                                <svg aria-hidden="true">
+                                                    <use
+                                                        href="/src/assets/icons/sprite.svg#check"
+                                                    />
+                                                </svg>
+                                                Limited financial liability with a
+                                                deductible/excess.
+                                            </li>
+                                            <li class="insurance_option-item">
+                                                <svg aria-hidden="true">
+                                                    <use
+                                                        href="/src/assets/icons/sprite.svg#check"
+                                                    />
+                                                </svg>
+                                                Partial coverage for car body damages (does not
+                                                cover tires, windows, roof, or undercarriage).
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="layered-background" aria-hidden="true"></div>
+                                </label>
+                                <label
+                                    class="insurance_plan insurance_plan__comprehensive"
+                                    for="comprehensive"
+                                >
+                                    <input
+                                        type="radio"
+                                        class="sr-only"
+                                        name="insurance"
+                                        value="comprehensive"
+                                        id="comprehensive"
+                                        aria-describedby="comprehensive-description"
+                                    />
+                                    <h3 class="insurance_plan-title">Comprehensive Insurance</h3>
+                                    <p class="insurance_plan-price">25 EUR/day</p>
+                                    <div
+                                        class="insurance_plan-description"
+                                        id="comprehensive-description"
+                                    >
+                                        <ul class="insurance_option-list">
+                                            <li class="insurance_option-item">
+                                                <svg aria-hidden="true">
+                                                    <use
+                                                        href="/src/assets/icons/sprite.svg#check"
+                                                    />
+                                                </svg>
+                                                Full coverage for all damages (including tires,
+                                                windows, roof, and undercarriage).
+                                            </li>
+                                            <li class="insurance_option-item">
+                                                <svg aria-hidden="true">
+                                                    <use
+                                                        href="/src/assets/icons/sprite.svg#check"
+                                                    />
+                                                </svg>
+                                                Theft protection.
+                                            </li>
+                                            <li class="insurance_option-item">
+                                                <svg aria-hidden="true">
+                                                    <use
+                                                        href="/src/assets/icons/sprite.svg#check"
+                                                    />
+                                                </svg>
+                                                No deductible/excess (or minimal excess).
+                                            </li>
+                                            <li class="insurance_option-item">
+                                                <svg aria-hidden="true">
+                                                    <use
+                                                        href="/src/assets/icons/sprite.svg#check"
+                                                    />
+                                                </svg>
+                                                Roadside assistance in case of breakdowns or
+                                                accidents.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="layered-background" aria-hidden="true"></div>
+                                </label>
+                            </div>
+                        </fieldset>
+                        <button class="order_presubmit btn" id="order_presubmit_btn" type="button">
+                            Proceed to Booking
+                        </button>
+                    </div>
+                    <section class="form_order" id="form_order">
+                        <div class="form_inputs-wrapper">
+                            <h2 class="form_title">Confirming Order</h2>
+                            <label for="first-name" class="form_label">
+                                <span>First Name</span>
+                                <input
+                                    type="text"
+                                    required
+                                    name="first-name"
+                                    id="first-name"
+                                    class="form_input"
+                                    placeholder="Enter Your First Name"
+                                />
+                            </label>
+                            <label for="last-name" class="form_label">
+                                <span>Last Name</span>
+                                <input
+                                    type="text"
+                                    required
+                                    name="last-name"
+                                    id="last-name"
+                                    class="form_input"
+                                    placeholder="Enter Your Last Name"
+                                />
+                            </label>
+                            <label for="email" class="form_label">
+                                <span>Email</span>
+                                <input
+                                    type="email"
+                                    required
+                                    name="email"
+                                    id="email"
+                                    class="form_input"
+                                    placeholder="olivia@untitledui.com"
+                                />
+                            </label>
+                            <label for="phone" class="form_label">
+                                <span>Phone Number</span>
+                                <div class="phone-input-container">
+                                    <label for="country-code-select" class="sr-only"
+                                        >Country code</label
+                                    >
+                                    <select
+                                        class="country-code-select"
+                                        id="country-code-select"
+                                    ></select>
+                                    <input
+                                        type="tel"
+                                        required
+                                        name="phone"
+                                        id="phone"
+                                        class="form_input"
+                                        aria-describedby="phone-description"
+                                    />
+                                </div>
+                                <p id="phone-description" class="sr-only">
+                                    Select your country code and enter your phone number.
+                                </p>
+                            </label>
+                            <label for="accept-terms" class="form_checkbox-terms">
+                                <input
+                                    type="checkbox"
+                                    name="accept-terms"
+                                    required
+                                    class="sr-only"
+                                    id="accept-terms"
+                                />
+                                <span class="terms_check-arrow" aria-hidden="true">
+                                    <svg>
+                                        <use href="/src/assets/icons/sprite.svg#checkbox-arrow" />
+                                    </svg>
+                                </span>
+                                I accept the terms & conditions
+                            </label>
+                        </div>
+                        <div class="form_summary-wrapper">
+                            <ul class="form_summary">
+                                <li class="form_summary-item" id="summary-date">
+                                    <div class="form_summary-title">Date</div>
+                                    <div class="form_summary-value">
+                                        <span id="start" title="Jan 1 | 08:00">Jan 1 | 08:00</span>
+                                        -
+                                        <span id="end" title="Jan 2 | 20:00">Jan 2 | 20:00</span>
+                                    </div>
+                                </li>
+                                <li class="form_summary-item" id="summary-location">
+                                    <div class="form_summary-title">Location</div>
+                                    <div class="form_summary-value">
+                                        <span
+                                            id="start"
+                                            title="Bratislava Bus Station, Stallone road, 32"
+                                            >Bratislava Bus Station, Stallone road, 32</span
+                                        >
+                                        -
+                                        <span
+                                            id="end"
+                                            title="Bratislava Bus Station, Stallone road, 32"
+                                            >Bratislava Bus Station, Stallone road, 32</span
+                                        >
+                                    </div>
+                                </li>
+                                <li class="form_summary-item" id="car-model">
+                                    <div class="form_summary-title">Volkswagen Touareg</div>
+                                    <div class="form_summary-value">
+                                        <span id="basic-price">32,98 EUR</span>
+                                    </div>
+                                </li>
+                                <li class="form_summary-item" id="insurance-plan">
+                                    <div class="form_summary-title"></div>
+                                    <div class="form_summary-value">
+                                        <span id="insurance-price"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="form_summary-total">
+                                Total: <span id="total-price">47,98 EUR</span>
+                            </div>
+                        </div>
+                        <div class="btns_wrapper">
+                            <button
+                                class="order_submit btn"
+                                type="submit"
+                                aria-label="Pay with cash"
+                            >
+                                <span class="order_submit-text">Pay Cash</span>
+                            </button>
+                            <button
+                                class="order_submit order_submit__card btn"
+                                type="submit"
+                                aria-label="Pay with card"
+                            >
+                                <span class="order_submit-text">Pay Card</span>
+                                <svg aria-hidden="true">
+                                    <use href="src/assets/icons/sprite.svg#card" />
+                                </svg>
+                            </button>
+                        </div>
+                    </section>
+                </form>
+            </div>
+            <section class="cta">
+                <div class="cta_wrapper container">
+                    <div class="cta_avatar-wrapper">
+                        <ul>
+                            <li class="cta_avatar">
+                                <span class="cta_avatar-img-wrapper">
+                                    <img src="src/assets/images/avatar1.webp" alt="User avatar 1" />
+                                </span>
+                            </li>
+                            <li class="cta_avatar">
+                                <span class="cta_avatar-img-wrapper">
+                                    <img src="src/assets/images/avatar2.webp" alt="User avatar 2" />
+                                </span>
+                            </li>
+                            <li class="cta_avatar">
+                                <span class="cta_avatar-img-wrapper">
+                                    <img src="src/assets/images/avatar3.webp" alt="User avatar 3" />
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <h2 class="cta_title">Still have questions?</h2>
+                    <p class="cta_description">
+                        Can’t find the answer you’re looking for? Please chat to our friendly team.
+                    </p>
+                    <button class="cta_btn" onclick="modal.showModal();">Contact Us</button>
+                    <dialog class="cta_modal" id="modal" aria-labelledby="modal_title">
+                        <h2 class="modal_title" id="modal_title">Contact Us</h2>
+                        <button
+                            class="modal_close"
+                            onclick="modal.close()"
+                            aria-label="Close modal"
+                        >
+                            ×
+                        </button>
+                        <form action="" method="dialog" class="modal_form">
+                            <label for="name" class="modal_form-label">
+                                <span>Name</span>
+                                <input
+                                    class="form_input"
+                                    type="text"
+                                    name="name"
+                                    id="name"
+                                    placeholder="Enter your name"
+                                    required
+                                />
+                            </label>
+                            <label for="email" class="modal_form-label">
+                                <span>Email</span>
+                                <input
+                                    class="form_input"
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    placeholder="Enter your email"
+                                    required
+                                />
+                            </label>
+                            <button class="modal_form-btn btn" type="submit">Send</button>
+                        </form>
+                    </dialog>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer_wrapper container">
+                <a href="#" class="footer_logo" aria-label="Untitled UI Home">
+                    <svg><use href="src/assets/icons/sprite.svg#logo" /></svg>
+                </a>
+                <p class="footer_slogan">Your Trusted Ride Awaits.</p>
+                <form action="" class="footer_subscribe-form">
+                    <label for="footer-email" class="footer_form-label">
+                        <span>Stay up to date</span>
+                        <input
+                            type="email"
+                            name="email"
+                            id="footer-email"
+                            placeholder="Enter your email"
+                            required
+                        />
+                    </label>
+                    <button class="footer_form-btn btn" type="submit">Subscribe</button>
+                </form>
+                <hr class="footer_hr" aria-hidden="true" />
+                <p class="footer_copyright">© 2077 Untitled UI. All rights reserved.</p>
+                <nav class="footer_nav" aria-label="Footer navigation">
+                    <ul>
+                        <li class="footer_nav-item"><a href="#">Terms</a></li>
+                        <li class="footer_nav-item"><a href="#">Privacy</a></li>
+                        <li class="footer_nav-item"><a href="#">Cookies</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+        <script type="module" src="/src/main.js"></script>
+    </body>
+</html>

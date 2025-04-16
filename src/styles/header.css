@@ -1,0 +1,174 @@
+.header {
+    background: var(--white-05);
+    .header_wrapper {
+        max-width: 1920px;
+        text-wrap: nowrap;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .header_logo {
+            margin-right: 84px;
+            svg {
+                width: 126px;
+                height: 15px;
+            }
+            @media (max-width: 1024px) {
+                flex: 1;
+            }
+        }
+        .header_nav ul {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 24px;
+            .header_nav-item {
+                font-size: var(--body-s);
+            }
+
+            .header_nav-link {
+                padding-block: 10px;
+                transition: all 0.2s ease-in-out;
+                display: block;
+                @media (hover: hover) {
+                    &:hover {
+                        color: rgb(var(--primary));
+                        transform: translateY(-2px);
+                        text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.1);
+                    }
+                }
+                &:focus {
+                    color: rgb(var(--primary));
+                    transform: translateY(-2px);
+                    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.1);
+                }
+            }
+            .header_nav-link__active {
+                color: rgb(var(--primary));
+            }
+        }
+        .header_links {
+            color: var(--white-70);
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            .header_lang-select {
+                width: 54px;
+                color: inherit;
+                border: none;
+                background: var(--white-05);
+                cursor: pointer;
+            }
+            .header_links-item,
+            .header_lang-select {
+                transition: color 0.2s ease-in-out;
+                @media (hover: hover) {
+                    &:hover {
+                        color: rgb(var(--primary));
+                        text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.1);
+                        & option {
+                            color: var(--white-70);
+                        }
+                    }
+                }
+                &:focus {
+                    color: rgb(var(--primary));
+                    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.1);
+                    & option {
+                        color: var(--white-70);
+                    }
+                }
+            }
+            .header_links-link {
+                display: flex;
+                align-items: center;
+                gap: 3px;
+                padding: 10px 16px;
+
+                & svg {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+        .header_menu {
+            position: relative;
+            [popover]#my-popover {
+                position: absolute;
+                top: 0;
+                left: 100%;
+                transform: translate(calc(-100% - 20px), 60px);
+                margin: 0;
+                padding: 16px;
+                background: var(--white-05);
+                border-radius: 8px;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                border: 1px solid var(--white-20);
+                button {
+                    position: absolute;
+                    top: 16px;
+                    right: 16px;
+                }
+                .header_menu-link {
+                    &:not(:first-child) {
+                        margin-top: 16px;
+                    }
+                    display: block;
+                    padding: 12px 16px;
+                    border-radius: 8px;
+                    transition: all 0.2s ease-in-out;
+                    @media (hover: hover) {
+                        &:hover {
+                            background: var(--white-10);
+                            color: rgb(var(--primary));
+                            text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.1);
+                        }
+                    }
+                    &:active {
+                        background: var(--white-20);
+                        color: rgb(var(--primary));
+                        text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.1);
+                    }
+                }
+            }
+            [popover]::backdrop {
+                background: rgba(255, 255, 255, 0.2);
+            }
+            .header_menu-button {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                gap: 5px;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+
+                .header_menu-line {
+                    width: 18px;
+                    height: 1.5px;
+                    border-radius: 2px;
+                    background: var(--white-70);
+                    transition: all 0.2s ease-in-out;
+                }
+                @media (hover: hover) {
+                    &:hover {
+                        background: var(--white-10);
+                        .header_menu-line {
+                            background: rgba(var(--primary) / 70%);
+                        }
+                    }
+                }
+                &:active {
+                    background: var(--white-20);
+                    .header_menu-line {
+                        background: rgba(var(--primary) / 80%);
+                    }
+                }
+            }
+        }
+    }
+}
